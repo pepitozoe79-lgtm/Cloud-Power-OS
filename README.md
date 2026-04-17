@@ -113,11 +113,30 @@ Obtendrás un resumen instantáneo con:
 
 ---
 
+## 🗑️ Desinstalación Segura
+
+Cloud Power se puede eliminar limpiamente sin dañar tu sistema base:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/pepitozoe79-lgtm/Cloud-Power-OS/main/uninstall.sh | sudo bash
+```
+
+El desinstalador:
+- ✅ Detiene y elimina todos los contenedores de Cloud Power
+- ✅ Desinstala CasaOS con su script oficial
+- ✅ Elimina el comando `cloud-status` y el banner MOTD
+- ❓ **Pregunta** antes de borrar datos persistentes (certificados SSL, configs)
+- ❓ **Pregunta** antes de desinstalar Docker
+- 🛡️ **Nunca toca** tu sistema base, SSH, ni paquetes del sistema
+
+---
+
 ## 📁 Estructura del Proyecto
 
 ```
 Cloud-Power-OS/
 ├── install.sh                    # Instalador universal v2.0.2
+├── uninstall.sh                  # Desinstalador seguro
 ├── README.md                     # Este archivo
 ├── LICENCIA                      # Licencia Apache 2.0
 ├── tools/
@@ -132,7 +151,7 @@ Cloud-Power-OS/
 ## 🗺️ Roadmap
 
 - [x] **v2.0.1** — Instalador universal con soporte NVMe/VirtIO
-- [x] **v2.0.2** — Cloud Power App Store (+200 plantillas Yacht)
+- [x] **v2.0.2** — Cloud Power App Store, error trap, uninstaller, cloud-update
 - [ ] **v2.1** — Soporte ZFS/BTRFS (Modo Avanzado)
 - [ ] **v2.2** — Uptime Kuma integrado para monitoreo de servicios
 - [ ] **v2.3** — Tema visual Cloud Power para CasaOS
