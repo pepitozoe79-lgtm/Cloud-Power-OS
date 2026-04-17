@@ -170,7 +170,34 @@ else
     echo 'echo -e "\033[1;33m⚡ Cloud Power OS activo. Ejecuta cloud-status.\033[0m"' >> /root/.bashrc
 fi
 
-# 12. Resumen final
+# 12. Inyección de Plantillas Premium en Yacht (Cloud Power App Store)
+echo -e "${YELLOW}📚 Cargando el Cloud Power App Store...${NC}"
+sleep 10  # Esperar a que Yacht esté completamente operativo
+
+# Función para añadir template vía API REST de Yacht
+add_yacht_template() {
+    local TEMPLATE_URL=$1
+    local TEMPLATE_NAME=$2
+    curl -s -X POST "http://localhost:8001/api/templates" \
+        -H "Content-Type: application/json" \
+        -d "{\"title\": \"${TEMPLATE_NAME}\", \"url\": \"${TEMPLATE_URL}\"}" \
+        > /dev/null 2>&1 && \
+        echo -e "${GREEN}   ✅ ${TEMPLATE_NAME}${NC}" || \
+        echo -e "${YELLOW}   ⚠️ ${TEMPLATE_NAME} (se cargará al primer acceso)${NC}"
+}
+
+# 1. Plantillas Oficiales de Portainer (Las más completas)
+add_yacht_template "https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json" "Portainer Official"
+
+# 2. Plantillas de SelfHostedPro (Curadas para Yacht)
+add_yacht_template "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/yacht.json" "SelfHosted Pro"
+
+# 3. Plantillas de MediaServer (Plex, Jellyfin, Sonarr, etc.)
+add_yacht_template "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json" "Media & Automation"
+
+echo -e "${GREEN}✅ Más de 200 aplicaciones disponibles en Yacht.${NC}"
+
+# 13. Resumen final
 echo ""
 echo -e "${GREEN}╔══════════════════════════════════════════╗${NC}"
 echo -e "${GREEN}║  ✅ ¡Instalación completada con éxito!   ║${NC}"

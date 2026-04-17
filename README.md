@@ -47,6 +47,7 @@ Cloud Power OS no reinventa la rueda. Aprovecha la estabilidad de tu sistema bas
 | 🚢 **Yacht** | `:8001` | Gestión avanzada de contenedores Docker con plantillas |
 | 🔀 **Nginx Proxy Manager** | `:81` | Proxy inverso con certificados SSL Let's Encrypt automáticos |
 | 🐳 **Docker Engine** | — | Motor de contenedores (instalación nativa desde repos oficiales) |
+| 📚 **App Store Premium** | — | +200 apps preconfiguradas (Plex, Nextcloud, Home Assistant...) |
 
 ---
 
@@ -65,6 +66,7 @@ El instalador ejecuta los siguientes pasos de forma automática:
  8. 🚀 Levanta Nginx Proxy Manager + Yacht via Docker Compose
  9. 🛠️ Crea el comando global 'cloud-status' para monitoreo rápido
 10. 🎨 Instala banner MOTD personalizado para sesiones SSH
+11. 📚 Inyecta +200 plantillas de apps en Yacht (Portainer, SelfHosted, Media)
 ```
 
 ---
@@ -128,6 +130,7 @@ Cloud-Power-OS/
 ## 🗺️ Roadmap
 
 - [x] **v2.0.1** — Instalador universal con soporte NVMe/VirtIO
+- [x] **v2.0.2** — Cloud Power App Store (+200 plantillas Yacht)
 - [ ] **v2.1** — Soporte ZFS/BTRFS (Modo Avanzado)
 - [ ] **v2.2** — Uptime Kuma integrado para monitoreo de servicios
 - [ ] **v2.3** — Tema visual Cloud Power para CasaOS
