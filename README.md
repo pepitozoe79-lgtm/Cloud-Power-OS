@@ -4,9 +4,9 @@
 
 ### Tu Nube Soberana en Un Solo Comando
 
-[![CI Status](https://github.com/pepitozoe79-lgtm/Cloud-Power-OS/actions/workflows/ci.yml/badge.svg)](https://github.com/pepitozoe79-lgtm/Cloud-Power-OS/actions)
+[![CI Status](https://github.com/pepitozoe79-lgtm/Cloud-Power-OS/actions/workflows/main.yml/badge.svg)](https://github.com/pepitozoe79-lgtm/Cloud-Power-OS/actions)
 [![License](https://img.shields.io/badge/Licencia-Apache%202.0-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Versión-2.0.1--alpha-orange.svg)]()
+[![Version](https://img.shields.io/badge/Versión-2.0.2--alpha-orange.svg)]()
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04%20|%2024.04-E95420?logo=ubuntu&logoColor=white)](https://ubuntu.com)
 [![Debian](https://img.shields.io/badge/Debian-12%20|%2013-A81D33?logo=debian&logoColor=white)](https://debian.org)
 
@@ -117,12 +117,14 @@ Obtendrás un resumen instantáneo con:
 
 ```
 Cloud-Power-OS/
-├── install.sh                    # Instalador universal v2.0.1
+├── install.sh                    # Instalador universal v2.0.2
 ├── README.md                     # Este archivo
 ├── LICENCIA                      # Licencia Apache 2.0
+├── tools/
+│   └── cloud-update.sh           # Script de actualización del stack
 └── .github/
     └── workflows/
-        └── ci.yml                # Validación ShellCheck + sintaxis
+        └── main.yml              # CI unificado (ShellCheck + Release)
 ```
 
 ---
